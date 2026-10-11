@@ -1,0 +1,442 @@
+{
+  "generated_at_utc": "2026-10-11T10:50:52.296649+00:00",
+  "result": "PASS",
+  "checks": [
+    {
+      "check": "Workbook sheet completeness",
+      "result": "PASS",
+      "detail": {
+        "actual_count": 25,
+        "names": [
+          "00_はじめに",
+          "01_結論と前提",
+          "02_構成図",
+          "03_仕組みと歴史",
+          "04_Global構成評価",
+          "05_DR手順",
+          "06_設定取得と共通イメージ",
+          "07_Proxy設定",
+          "08_接続経路の厳格評価",
+          "09_パラメータ設計原則",
+          "10_タイムアウト",
+          "11_Java_JNDI",
+          "12_認証とTLS",
+          "13_ストレージ設計",
+          "14_受入試験と監視",
+          "15_接続数試算",
+          "16_設定例と確認手順",
+          "20_クラスタ既定",
+          "21_クラスタ推奨",
+          "22_インスタンス既定",
+          "23_インスタンス推奨",
+          "24_全件一覧の読み方",
+          "25_長い許容値",
+          "90_公式出典",
+          "91_API取得証跡"
+        ]
+      }
+    },
+    {
+      "check": "Table navigation: 01_結論と前提",
+      "result": "PASS",
+      "detail": {
+        "rows": 10,
+        "filter": "A5:E15",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 03_仕組みと歴史",
+      "result": "PASS",
+      "detail": {
+        "rows": 11,
+        "filter": "A5:E16",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 04_Global構成評価",
+      "result": "PASS",
+      "detail": {
+        "rows": 12,
+        "filter": "A5:E17",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 05_DR手順",
+      "result": "PASS",
+      "detail": {
+        "rows": 12,
+        "filter": "A5:E17",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 06_設定取得と共通イメージ",
+      "result": "PASS",
+      "detail": {
+        "rows": 10,
+        "filter": "A5:E15",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 07_Proxy設定",
+      "result": "PASS",
+      "detail": {
+        "rows": 31,
+        "filter": "A5:F36",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 08_接続経路の厳格評価",
+      "result": "PASS",
+      "detail": {
+        "rows": 12,
+        "filter": "A5:E17",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 09_パラメータ設計原則",
+      "result": "PASS",
+      "detail": {
+        "rows": 12,
+        "filter": "A5:E17",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 10_タイムアウト",
+      "result": "PASS",
+      "detail": {
+        "rows": 22,
+        "filter": "A5:H27",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 11_Java_JNDI",
+      "result": "PASS",
+      "detail": {
+        "rows": 23,
+        "filter": "A5:F28",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 12_認証とTLS",
+      "result": "PASS",
+      "detail": {
+        "rows": 9,
+        "filter": "A5:E14",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 13_ストレージ設計",
+      "result": "PASS",
+      "detail": {
+        "rows": 18,
+        "filter": "A5:E23",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 14_受入試験と監視",
+      "result": "PASS",
+      "detail": {
+        "rows": 15,
+        "filter": "A5:E20",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 20_クラスタ既定",
+      "result": "PASS",
+      "detail": {
+        "rows": 430,
+        "filter": "A5:M435",
+        "freeze": "C6"
+      }
+    },
+    {
+      "check": "Table navigation: 21_クラスタ推奨",
+      "result": "PASS",
+      "detail": {
+        "rows": 430,
+        "filter": "A5:I435",
+        "freeze": "C6"
+      }
+    },
+    {
+      "check": "Table navigation: 22_インスタンス既定",
+      "result": "PASS",
+      "detail": {
+        "rows": 299,
+        "filter": "A5:M304",
+        "freeze": "C6"
+      }
+    },
+    {
+      "check": "Table navigation: 23_インスタンス推奨",
+      "result": "PASS",
+      "detail": {
+        "rows": 299,
+        "filter": "A5:I304",
+        "freeze": "C6"
+      }
+    },
+    {
+      "check": "Table navigation: 25_長い許容値",
+      "result": "PASS",
+      "detail": {
+        "rows": 100,
+        "filter": "A5:E105",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 91_API取得証跡",
+      "result": "PASS",
+      "detail": {
+        "rows": 12,
+        "filter": "A5:F17",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 24_全件一覧の読み方",
+      "result": "PASS",
+      "detail": {
+        "rows": 10,
+        "filter": "A5:E15",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 90_公式出典",
+      "result": "PASS",
+      "detail": {
+        "rows": 61,
+        "filter": "A5:E66",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Table navigation: 16_設定例と確認手順",
+      "result": "PASS",
+      "detail": {
+        "rows": 7,
+        "filter": "A5:E12",
+        "freeze": "B6"
+      }
+    },
+    {
+      "check": "Every table cell matches the common content source",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "Wrapped body cells",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "All citation IDs resolve",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "cluster: full parameter set and order",
+      "result": "PASS",
+      "detail": {
+        "api_rows": 430,
+        "distinct_names": 430
+      }
+    },
+    {
+      "check": "cluster: API default fidelity; omissions not invented",
+      "result": "PASS",
+      "detail": {
+        "omitted_defaults": 357,
+        "mismatch": []
+      }
+    },
+    {
+      "check": "cluster: later-version parameter explicitly excluded",
+      "result": "PASS",
+      "detail": [
+        "aurora_transaction_timeout"
+      ]
+    },
+    {
+      "check": "cluster: Tokyo/Osaka default and constraint agreement",
+      "result": "PASS",
+      "detail": "SupportedEngineModes omissions are evaluated separately from service availability."
+    },
+    {
+      "check": "instance: full parameter set and order",
+      "result": "PASS",
+      "detail": {
+        "api_rows": 299,
+        "distinct_names": 299
+      }
+    },
+    {
+      "check": "instance: API default fidelity; omissions not invented",
+      "result": "PASS",
+      "detail": {
+        "omitted_defaults": 254,
+        "mismatch": []
+      }
+    },
+    {
+      "check": "instance: later-version parameter explicitly excluded",
+      "result": "PASS",
+      "detail": [
+        "aurora_transaction_timeout"
+      ]
+    },
+    {
+      "check": "instance: Tokyo/Osaka default and constraint agreement",
+      "result": "PASS",
+      "detail": "SupportedEngineModes omissions are evaluated separately from service availability."
+    },
+    {
+      "check": "Long allowed-value lists have no omissions or reordering",
+      "result": "PASS",
+      "detail": {
+        "collation_connection": 199,
+        "collation_server": 199,
+        "time_zone": 598
+      }
+    },
+    {
+      "check": "ap-northeast-1: 8.4.7 / db.serverless / Global availability",
+      "result": "PASS",
+      "detail": {
+        "engine": "8.4.mysql_aurora.8.4.7",
+        "serverless_options": 2
+      }
+    },
+    {
+      "check": "ap-northeast-3: 8.4.7 / db.serverless / Global availability",
+      "result": "PASS",
+      "detail": {
+        "engine": "8.4.mysql_aurora.8.4.7",
+        "serverless_options": 2
+      }
+    },
+    {
+      "check": "Aurora native password evidence",
+      "result": "PASS",
+      "detail": "Aurora-specific fact, distinct from Community MySQL 8.4."
+    },
+    {
+      "check": "Meiryo UI on all populated cells",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "Monochrome cell font and fill colors",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "Excel row-height limit respected",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "No unintended spreadsheet formulas",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "Workbook internal links resolve",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "Capacity formula cached results",
+      "result": "PASS",
+      "detail": [
+        1208,
+        1571,
+        729,
+        2400,
+        550,
+        "枠内（性能は未検証）"
+      ]
+    },
+    {
+      "check": "XLSX ZIP CRC and XML parsing",
+      "result": "PASS",
+      "detail": {
+        "xml_parts": 52,
+        "crc_error": null
+      }
+    },
+    {
+      "check": "Java example compilation (JDK 17)",
+      "result": "PASS",
+      "detail": {
+        "command": "javac -encoding UTF-8 -d validation/classes examples/BatchConnectionExample.java",
+        "returncode": 0,
+        "output": ""
+      }
+    },
+    {
+      "check": "Python source syntax",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "JSON parsing",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "UTF-8, replacement characters, trailing whitespace",
+      "result": "PASS",
+      "detail": {
+        "files": 34,
+        "errors": []
+      }
+    },
+    {
+      "check": "No common AWS access-key or private-key literals",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "Markdown local links resolve",
+      "result": "PASS",
+      "detail": []
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "deliverables\\Aurora_GlobalDatabase_Design_Assessment_2026-10-11.xlsx",
+      "bytes": 361095,
+      "sha256": "565e5061d25ddea538f348085c508ebefe6f8416a573ed52376f4ac3054fe980"
+    },
+    {
+      "file": "deliverables\\Aurora_GlobalDatabase_Design_Assessment_2026-10-11.md",
+      "bytes": 1044622,
+      "sha256": "91e963ed88c79dc5e156451125596d5b724939799c220d13a79733be8cb88c63"
+    }
+  ],
+  "not_executed": [
+    "AWS resource changes",
+    "DB connection or SQL execution",
+    "EAP management-model application",
+    "Runtime values on customer DBs",
+    "Load/latency/failover/restore tests"
+  ],
+  "git_diff_check": "Not available: workspace is not a Git repository. Text and artifact checks were performed directly.",
+  "visual_review": "See excel_render_report.json and preview files when present. Visual inspection is reported separately."
+}

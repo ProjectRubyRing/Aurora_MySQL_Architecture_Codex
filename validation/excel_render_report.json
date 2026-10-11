@@ -1,0 +1,6 @@
+{
+  "created_at_utc": "2026-10-11T10:44:16.853779+00:00",
+  "samples": [],
+  "result": "FAIL",
+  "error": "com_error: (-2146959355, 'サーバーの実行に失敗しました', None, None)"
+}

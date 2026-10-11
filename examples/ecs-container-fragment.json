@@ -1,0 +1,15 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "online",
+      "image": "<REGIONAL_ECR_REPOSITORY>@sha256:<APPROVED_DIGEST>",
+      "essential": true,
+      "environment": [
+        { "name": "DB_NAME", "value": "appdb" }
+      ],
+      "secrets": [
+        { "name": "DB_PROXY_HOST", "valueFrom": "/app/prod/db/proxy-rw-host" }
+      ]
+    }
+  ]
+}

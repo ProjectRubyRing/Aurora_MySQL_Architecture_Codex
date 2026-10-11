@@ -1,0 +1,1190 @@
+{
+  "EngineDefaults": {
+    "Parameters": [
+      {
+        "ParameterName": "aurora_binlog_replication_max_yield_seconds",
+        "Description": "Controls the number of seconds that binary log dump thread waits up to for the current binlog file to be filled by transactions. This wait period avoids contention that can arise from replicating each binlog event individually.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-36000",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aurora_enable_staggered_replica_restart",
+        "Description": "Allow Aurora replicas to follow a staggered restart schedule to increase cluster availability.",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aurora_enable_validate_password_component",
+        "ParameterValue": "0",
+        "Description": "This option toggles the validate_password component validations.",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aurora_enhanced_binlog",
+        "Description": "This parameter can be used to enable and disable Aurora Enhanced Binlog.",
+        "Source": "system",
+        "ApplyType": "static",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aurora_full_double_precision_in_json",
+        "ParameterValue": "0",
+        "Description": "Enable parsing of floating point numbers in JSON documents with full precision",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aurora_fwd_writer_idle_timeout",
+        "ParameterValue": "60",
+        "Description": "The number of seconds the server waits for activity on a forwarded Replica connection before closing it.",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "1-86400",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aurora_fwd_writer_max_connections_pct",
+        "ParameterValue": "10",
+        "Description": "The percentage of max_connections that can be used for connections forwarded from Replicas.",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-90",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aurora_lambda_request_timeout",
+        "Description": "Aurora Lambda request timeout in milliseconds",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "10000-900000",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aurora_ml_inference_timeout",
+        "ParameterValue": "3000",
+        "Description": "Sagemaker/Bedrock request timeout value in milliseconds.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "3000-30000",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aurora_read_replica_read_committed",
+        "ParameterValue": "OFF",
+        "Description": "Enable support for ANSI SQL Read Committed isolation level on Aurora reader nodes",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "ON,OFF",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "auto_increment_increment",
+        "Description": "Intended for use with source-to-source replication, and can be used to control the operation of AUTO_INCREMENT columns",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "1-65535",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "auto_increment_offset",
+        "Description": "Determines the starting point for the AUTO_INCREMENT column value",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "1-65535",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aws_default_bedrock_role",
+        "Description": "IAM role ARN used for integration with Amazon Bedrock.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aws_default_comprehend_role",
+        "Description": "Default IAM role ARN used for integration with AWS Comprehend",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aws_default_lambda_role",
+        "Description": "aws_default_lambda_role",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aws_default_logs_role",
+        "Description": "Arn for the role used to upload data to CloudWatch Logs",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aws_default_s3_role",
+        "Description": "aws_default_s3_role",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "aws_default_sagemaker_role",
+        "Description": "Default IAM role ARN used for integration with AWS SageMaker",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog-do-db",
+        "Description": "Creates a replication filter using the name of a database",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "list",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog-ignore-db",
+        "Description": "Creates a replication ignore filter using the name of a database",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "list",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_backup",
+        "ParameterValue": "1",
+        "Description": "This setting controls if binary log data will be backed up or not. This setting is only used with aurora_enhanced_binlog. It must be disabled when aurora_enhanced_binlog is enabled, and enabled when aurora_enhanced_binlog is disabled.",
+        "Source": "system",
+        "ApplyType": "static",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_checksum",
+        "Description": "When enabled, this variable causes the source to write a checksum for each event in the binary log.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "NONE,CRC32",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_error_action",
+        "Description": "Controls what happens when the server cannot write to the binary log.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "IGNORE_ERROR,ABORT_SERVER",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_format",
+        "ParameterValue": "OFF",
+        "Description": "Binary logging format for replication",
+        "Source": "system",
+        "ApplyType": "static",
+        "DataType": "string",
+        "AllowedValues": "ROW,STATEMENT,MIXED,OFF",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_group_commit_sync_delay",
+        "Description": "Controls how many microseconds the binary log commit waits before synchronizing the binary log file to storage. Setting binlog_group_commit_sync_delay can increase the number of parallel committing transactions on any server that has (or might have after a failover) a replica, and therefore can increase parallel execution on the replicas.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-1000000",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_group_commit_sync_no_delay_count",
+        "Description": "The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-100000",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_replication_globaldb",
+        "ParameterValue": "1",
+        "Description": "This setting controls if binary log data will be replicated to global database secondary clusters. This setting is only used with aurora_enhanced_binlog.  It must be disabled when aurora_enhanced_binlog is enabled, and enabled when aurora_enhanced_binlog is disabled.",
+        "Source": "system",
+        "ApplyType": "static",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_row_image",
+        "Description": "Whether the server logs full or minimal rows with row-based replication.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "full,minimal,noblob",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_row_metadata",
+        "Description": "Configures the amount of table metadata added to the binary log when using row-based logging.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "full,minimal",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_row_value_options",
+        "Description": "When set to PARTIAL_JSON, this option enables a space-efficient row-based binary log format for UPDATE statements that modify a JSON value using only the functions JSON_SET, JSON_REPLACE, and JSON_REMOVE. For such updates, only the modified parts of the JSON document are included in the binary log, so small changes of big documents may need significantly less space.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "PARTIAL_JSON, ",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_rows_query_log_events",
+        "Description": "When enabled, it causes a MySQL 5.6.2 or later server to write informational log events such as row query log events into its binary log.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "binlog_transaction_dependency_history_size",
+        "Description": "The limit on the number of row hashes kept in memory to track the last transaction that modified a given row",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "1-1000000",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "character_set_client",
+        "Description": "The character set for statements that arrive from the client.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "big5,dec8,cp850,hp8,koi8r,latin1,latin2,swe7,ascii,ujis,sjis,hebrew,tis620,euckr,koi8u,gb2312,greek,cp1250,gbk,latin5,armscii8,utf8,cp866,keybcs2,macce,macroman,cp852,latin7,utf8mb4,cp1251,cp1256,cp1257,binary,geostd8,cp932,eucjpms",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "character_set_connection",
+        "Description": "The character set used for literals that do not have a character set introducer and for number-to-string conversion.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "big5,dec8,cp850,hp8,koi8r,latin1,latin2,swe7,ascii,ujis,sjis,hebrew,tis620,euckr,koi8u,gb2312,greek,cp1250,gbk,latin5,armscii8,utf8,ucs2,cp866,keybcs2,macce,macroman,cp852,latin7,utf8mb4,cp1251,utf16,cp1256,cp1257,utf32,binary,geostd8,cp932,eucjpms",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "character_set_database",
+        "Description": "The character set used by the default database.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "big5,dec8,cp850,hp8,koi8r,latin1,latin2,swe7,ascii,ujis,sjis,hebrew,tis620,euckr,koi8u,gb2312,greek,cp1250,gbk,latin5,armscii8,utf8,ucs2,cp866,keybcs2,macce,macroman,cp852,latin7,utf8mb4,cp1251,utf16,cp1256,cp1257,utf32,binary,geostd8,cp932,eucjpms",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "character_set_filesystem",
+        "Description": "The file system character set.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "big5,dec8,cp850,hp8,koi8r,latin1,latin2,swe7,ascii,ujis,sjis,hebrew,tis620,euckr,koi8u,gb2312,greek,cp1250,gbk,latin5,armscii8,utf8,ucs2,cp866,keybcs2,macce,macroman,cp852,latin7,utf8mb4,cp1251,utf16,cp1256,cp1257,utf32,binary,geostd8,cp932,eucjpms",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "character_set_results",
+        "Description": "The character set used for returning query results to the client.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "big5,dec8,cp850,hp8,koi8r,latin1,latin2,swe7,ascii,ujis,sjis,hebrew,tis620,euckr,koi8u,gb2312,greek,cp1250,gbk,latin5,armscii8,utf8,ucs2,cp866,keybcs2,macce,macroman,cp852,latin7,utf8mb4,cp1251,utf16,cp1256,cp1257,utf32,binary,geostd8,cp932,eucjpms",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "character_set_server",
+        "Description": "The server's default character set.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "big5,dec8,cp850,hp8,koi8r,latin1,latin2,swe7,ascii,ujis,sjis,hebrew,tis620,euckr,koi8u,gb2312,greek,cp1250,gbk,latin5,armscii8,utf8,ucs2,cp866,keybcs2,macce,macroman,cp852,latin7,utf8mb4,cp1251,utf16,cp1256,cp1257,utf32,binary,geostd8,cp932,eucjpms",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "check_proxy_users",
+        "Description": "Controls whether the mysql_native_password and sha256_password built-in authentication plugins support proxy users.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "collation_connection",
+        "Description": "The collation of the connection character set.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "big5_chinese_ci,big5_bin,dec8_swedish_ci,dec8_bin,cp850_general_ci,cp850_bin,hp8_english_ci,hp8_bin,koi8r_general_ci,koi8r_bin,latin1_german1_ci,latin1_swedish_ci,latin1_danish_ci,latin1_german2_ci,latin1_bin,latin1_general_ci,latin1_general_cs,latin1_spanish_ci,latin2_czech_cs,latin2_general_ci,latin2_hungarian_ci,latin2_croatian_ci,latin2_bin,swe7_swedish_ci,swe7_bin,ascii_general_ci,ascii_bin,ujis_japanese_ci,ujis_bin,sjis_japanese_ci,sjis_bin,hebrew_general_ci,hebrew_bin,tis620_thai_ci,tis620_bin,euckr_korean_ci,euckr_bin,koi8u_general_ci,koi8u_bin,gb2312_chinese_ci,gb2312_bin,greek_general_ci,greek_bin,cp1250_general_ci,cp1250_czech_cs,cp1250_croatian_ci,cp1250_bin,cp1250_polish_ci,gbk_chinese_ci,gbk_bin,latin5_turkish_ci,latin5_bin,armscii8_general_ci,armscii8_bin,utf8_general_ci,utf8_bin,utf8_unicode_ci,utf8_icelandic_ci,utf8_latvian_ci,utf8_romanian_ci,utf8_slovenian_ci,utf8_polish_ci,utf8_estonian_ci,utf8_spanish_ci,utf8_swedish_ci,utf8_turkish_ci,utf8_czech_ci,utf8_danish_ci,utf8_lithuanian_ci,utf8_slovak_ci,utf8_spanish2_ci,utf8_roman_ci,utf8_persian_ci,utf8_esperanto_ci,utf8_hungarian_ci,utf8_sinhala_ci,ucs2_general_ci,ucs2_bin,ucs2_unicode_ci,ucs2_icelandic_ci,ucs2_latvian_ci,ucs2_romanian_ci,ucs2_slovenian_ci,ucs2_polish_ci,ucs2_estonian_ci,ucs2_spanish_ci,ucs2_swedish_ci,ucs2_turkish_ci,ucs2_czech_ci,ucs2_danish_ci,ucs2_lithuanian_ci,ucs2_slovak_ci,ucs2_spanish2_ci,ucs2_roman_ci,ucs2_persian_ci,ucs2_esperanto_ci,ucs2_hungarian_ci,ucs2_sinhala_ci,cp866_general_ci,cp866_bin,keybcs2_general_ci,keybcs2_bin,macce_general_ci,macce_bin,macroman_general_ci,macroman_bin,cp852_general_ci,cp852_bin,latin7_estonian_cs,latin7_general_ci,latin7_general_cs,latin7_bin,utf8mb4_general_ci,utf8mb4_bin,utf8mb4_unicode_ci,utf8mb4_icelandic_ci,utf8mb4_latvian_ci,utf8mb4_romanian_ci,utf8mb4_slovenian_ci,utf8mb4_polish_ci,utf8mb4_estonian_ci,utf8mb4_spanish_ci,utf8mb4_swedish_ci,utf8mb4_turkish_ci,utf8mb4_czech_ci,utf8mb4_danish_ci,utf8mb4_lithuanian_ci,utf8mb4_slovak_ci,utf8mb4_spanish2_ci,utf8mb4_roman_ci,utf8mb4_persian_ci,utf8mb4_esperanto_ci,utf8mb4_hungarian_ci,utf8mb4_sinhala_ci,cp1251_bulgarian_ci,cp1251_ukrainian_ci,cp1251_bin,cp1251_general_ci,cp1251_general_cs,utf16_general_ci,utf16_bin,utf16_unicode_ci,utf16_icelandic_ci,utf16_latvian_ci,utf16_romanian_ci,utf16_slovenian_ci,utf16_polish_ci,utf16_estonian_ci,utf16_spanish_ci,utf16_swedish_ci,utf16_turkish_ci,utf16_czech_ci,utf16_danish_ci,utf16_lithuanian_ci,utf16_slovak_ci,utf16_spanish2_ci,utf16_roman_ci,utf16_persian_ci,utf16_esperanto_ci,utf16_hungarian_ci,utf16_sinhala_ci,cp1256_general_ci,cp1256_bin,cp1257_lithuanian_ci,cp1257_bin,cp1257_general_ci,utf32_general_ci,utf32_bin,utf32_unicode_ci,utf32_icelandic_ci,utf32_latvian_ci,utf32_romanian_ci,utf32_slovenian_ci,utf32_polish_ci,utf32_estonian_ci,utf32_spanish_ci,utf32_swedish_ci,utf32_turkish_ci,utf32_czech_ci,utf32_danish_ci,utf32_lithuanian_ci,utf32_slovak_ci,utf32_spanish2_ci,utf32_roman_ci,utf32_persian_ci,utf32_esperanto_ci,utf32_hungarian_ci,utf32_sinhala_ci,binary,geostd8_general_ci,geostd8_bin,cp932_japanese_ci,cp932_bin,eucjpms_japanese_ci,eucjpms_bin,utf8mb4_0900_ai_ci,utf8mb4_0900_as_ci,utf8mb4_0900_as_cs,utf8mb4_0900_bin",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "collation_server",
+        "Description": "The server's default collation.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "big5_chinese_ci,big5_bin,dec8_swedish_ci,dec8_bin,cp850_general_ci,cp850_bin,hp8_english_ci,hp8_bin,koi8r_general_ci,koi8r_bin,latin1_german1_ci,latin1_swedish_ci,latin1_danish_ci,latin1_german2_ci,latin1_bin,latin1_general_ci,latin1_general_cs,latin1_spanish_ci,latin2_czech_cs,latin2_general_ci,latin2_hungarian_ci,latin2_croatian_ci,latin2_bin,swe7_swedish_ci,swe7_bin,ascii_general_ci,ascii_bin,ujis_japanese_ci,ujis_bin,sjis_japanese_ci,sjis_bin,hebrew_general_ci,hebrew_bin,tis620_thai_ci,tis620_bin,euckr_korean_ci,euckr_bin,koi8u_general_ci,koi8u_bin,gb2312_chinese_ci,gb2312_bin,greek_general_ci,greek_bin,cp1250_general_ci,cp1250_czech_cs,cp1250_croatian_ci,cp1250_bin,cp1250_polish_ci,gbk_chinese_ci,gbk_bin,latin5_turkish_ci,latin5_bin,armscii8_general_ci,armscii8_bin,utf8_general_ci,utf8_bin,utf8_unicode_ci,utf8_icelandic_ci,utf8_latvian_ci,utf8_romanian_ci,utf8_slovenian_ci,utf8_polish_ci,utf8_estonian_ci,utf8_spanish_ci,utf8_swedish_ci,utf8_turkish_ci,utf8_czech_ci,utf8_danish_ci,utf8_lithuanian_ci,utf8_slovak_ci,utf8_spanish2_ci,utf8_roman_ci,utf8_persian_ci,utf8_esperanto_ci,utf8_hungarian_ci,utf8_sinhala_ci,ucs2_general_ci,ucs2_bin,ucs2_unicode_ci,ucs2_icelandic_ci,ucs2_latvian_ci,ucs2_romanian_ci,ucs2_slovenian_ci,ucs2_polish_ci,ucs2_estonian_ci,ucs2_spanish_ci,ucs2_swedish_ci,ucs2_turkish_ci,ucs2_czech_ci,ucs2_danish_ci,ucs2_lithuanian_ci,ucs2_slovak_ci,ucs2_spanish2_ci,ucs2_roman_ci,ucs2_persian_ci,ucs2_esperanto_ci,ucs2_hungarian_ci,ucs2_sinhala_ci,cp866_general_ci,cp866_bin,keybcs2_general_ci,keybcs2_bin,macce_general_ci,macce_bin,macroman_general_ci,macroman_bin,cp852_general_ci,cp852_bin,latin7_estonian_cs,latin7_general_ci,latin7_general_cs,latin7_bin,utf8mb4_general_ci,utf8mb4_bin,utf8mb4_unicode_ci,utf8mb4_icelandic_ci,utf8mb4_latvian_ci,utf8mb4_romanian_ci,utf8mb4_slovenian_ci,utf8mb4_polish_ci,utf8mb4_estonian_ci,utf8mb4_spanish_ci,utf8mb4_swedish_ci,utf8mb4_turkish_ci,utf8mb4_czech_ci,utf8mb4_danish_ci,utf8mb4_lithuanian_ci,utf8mb4_slovak_ci,utf8mb4_spanish2_ci,utf8mb4_roman_ci,utf8mb4_persian_ci,utf8mb4_esperanto_ci,utf8mb4_hungarian_ci,utf8mb4_sinhala_ci,cp1251_bulgarian_ci,cp1251_ukrainian_ci,cp1251_bin,cp1251_general_ci,cp1251_general_cs,utf16_general_ci,utf16_bin,utf16_unicode_ci,utf16_icelandic_ci,utf16_latvian_ci,utf16_romanian_ci,utf16_slovenian_ci,utf16_polish_ci,utf16_estonian_ci,utf16_spanish_ci,utf16_swedish_ci,utf16_turkish_ci,utf16_czech_ci,utf16_danish_ci,utf16_lithuanian_ci,utf16_slovak_ci,utf16_spanish2_ci,utf16_roman_ci,utf16_persian_ci,utf16_esperanto_ci,utf16_hungarian_ci,utf16_sinhala_ci,cp1256_general_ci,cp1256_bin,cp1257_lithuanian_ci,cp1257_bin,cp1257_general_ci,utf32_general_ci,utf32_bin,utf32_unicode_ci,utf32_icelandic_ci,utf32_latvian_ci,utf32_romanian_ci,utf32_slovenian_ci,utf32_polish_ci,utf32_estonian_ci,utf32_spanish_ci,utf32_swedish_ci,utf32_turkish_ci,utf32_czech_ci,utf32_danish_ci,utf32_lithuanian_ci,utf32_slovak_ci,utf32_spanish2_ci,utf32_roman_ci,utf32_persian_ci,utf32_esperanto_ci,utf32_hungarian_ci,utf32_sinhala_ci,binary,geostd8_general_ci,geostd8_bin,cp932_japanese_ci,cp932_bin,eucjpms_japanese_ci,eucjpms_bin,utf8mb4_0900_ai_ci,utf8mb4_0900_as_ci,utf8mb4_0900_as_cs,utf8mb4_0900_bin",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "completion_type",
+        "Description": "The transaction completion type (0 - default, 1 - chain, 2 - release)",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-2",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "default_password_lifetime",
+        "ParameterValue": "0",
+        "Description": "Defines the global automatic password expiration policy.",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-65535",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "default_storage_engine",
+        "ParameterValue": "InnoDB",
+        "Description": "The default storage engine (table type).",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "InnoDB,MRG_MYISAM,BLACKHOLE,CSV,MEMORY,FEDERATED,ARCHIVE,MyISAM",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "disconnect_on_expired_password",
+        "Description": "Controls how the server handles clients with expired passwords:",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "enforce_gtid_consistency",
+        "Description": "Prevents execution of statements that cannot be logged in a transactionally safe manner",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "string",
+        "AllowedValues": "OFF,WARN,ON",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "event_scheduler",
+        "Description": "Indicates the status of the Event Scheduler",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "ON,OFF",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "generated_random_password_length",
+        "ParameterValue": "20",
+        "Description": "generated_random_password_length",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "5-255",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "gtid-mode",
+        "ParameterValue": "OFF_PERMISSIVE",
+        "Description": "Controls whether GTID based logging is enabled and what type of transactions the logs can contain",
+        "Source": "system",
+        "ApplyType": "static",
+        "DataType": "string",
+        "AllowedValues": "OFF,OFF_PERMISSIVE,ON_PERMISSIVE,ON",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "gtid_executed_compression_period",
+        "Description": "Compress the mysql.gtid_executed table each time this many transactions have taken place",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-4294967295",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "gtid_purged",
+        "Description": "The set of all GTIDs that have been purged from the binary log",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "innodb_adaptive_hash_index",
+        "ParameterValue": "0",
+        "Description": "Whether innodb adaptive hash indexes are enabled or disabled",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_adaptive_hash_index_parts",
+        "Description": "Partitions the adaptive hash index search system.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "1-512",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_aurora_instant_alter_column_allowed",
+        "Description": "Controls whether the INSTANT algorithm can be used for ALTER COLUMN operations at the global level.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_autoextend_increment",
+        "Description": "The increment size (in MB) for extending the size of an auto-extending tablespace file when it becomes full",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "1-1000",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_autoinc_lock_mode",
+        "Description": "The locking mode to use for generating auto-increment values",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "0-2",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_checksum_algorithm",
+        "ParameterValue": "none",
+        "Description": "Specifies how to generate and verify the checksum stored in each disk block of each InnoDB tablespace.",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "crc32,innodb,none,strict_crc32,strict_innodb,strict_none",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "innodb_commit_concurrency",
+        "Description": "The number of threads that can commit at the same time.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "0-1000",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_data_home_dir",
+        "Description": "Directory where innodb files are stored",
+        "Source": "system",
+        "ApplyType": "static",
+        "DataType": "string",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "innodb_default_row_format",
+        "Description": "Defines the default row format for InnoDB tables (including user-created InnoDB temporary tables).",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "DYNAMIC,COMPACT,REDUNDANT",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_doublewrite",
+        "ParameterValue": "0",
+        "Description": "InnoDB doublewrite must be disabled in Oscar",
+        "Source": "system",
+        "ApplyType": "static",
+        "DataType": "boolean",
+        "AllowedValues": "0",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "innodb_file_per_table",
+        "Description": "Use tablespaces or files for Innodb.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_fill_factor",
+        "Description": "Defines the percentage of space on each B-tree page that is filled during a sorted index build, with the remaining space reserved for future index growth.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "10-100",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_flush_log_at_trx_commit",
+        "Description": "Determines Innodb transaction durability",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-2",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_ft_max_token_size",
+        "Description": "Maximum length of words that are stored in an InnoDB FULLTEXT index.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "10-252",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_ft_min_token_size",
+        "Description": "Minimum length of words that are stored in an InnoDB FULLTEXT index.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "0-16",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_ft_num_word_optimize",
+        "Description": "Number of words to process during each OPTIMIZE TABLE operation on an InnoDB FULLTEXT index.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "1-4294967295",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_ft_sort_pll_degree",
+        "Description": "Number of threads used in parallel to index and tokenize text in an InnoDB FULLTEXT index, when building a search index for a large table.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "1-32",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_online_alter_log_max_size",
+        "Description": "Specifies an upper limit on the size of the temporary log files used during online DDL operations for InnoDB tables.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "65536-18446744073709551615",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_optimize_fulltext_only",
+        "Description": "Changes the way the OPTIMIZE TABLE statement operates on InnoDB tables.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_page_cleaners",
+        "Description": "The number of page cleaner threads that flush dirty pages from buffer pool instances.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "1-64",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_page_size",
+        "Description": "Specifies the page size for all InnoDB tablespaces in a MySQL instance.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "string",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "innodb_purge_batch_size",
+        "Description": "The granularity of changes, expressed in units of redo log records, that trigger a purge operation, flushing the changed buffer pool blocks to disk",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "1-5000",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_purge_threads",
+        "Description": "The number of background threads devoted to the InnoDB purge operation",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "1-32",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_rollback_on_timeout",
+        "Description": "Controls whether timeouts rollback the last statement or the entire transaction",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_rollback_segments",
+        "Description": "Defines how many of the rollback segments in the system tablespace that InnoDB uses within a transaction.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "1-128",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_spin_wait_delay",
+        "Description": "The maximum delay between polls for a spin lock.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-4294967295",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_stats_include_delete_marked",
+        "Description": "When innodb_stats_include_delete_marked is enabled, ANALYZE TABLE considers delete-marked records when recalculating statistics.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_strict_mode",
+        "Description": "Whether InnoDB returns errors rather than warnings for exceptional conditions.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_sync_array_size",
+        "Description": "Splits an internal data structure used to coordinate threads, for higher concurrency in workloads with large numbers of waiting threads.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "1-1024",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_sync_spin_loops",
+        "ParameterValue": "30",
+        "Description": "The number of times a thread waits for an innodb mutex to be freed before the thread is suspended",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-9223372036854775807",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_table_locks",
+        "Description": "If autocommit = 0, innodb honors LOCK TABLES",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_trx_commit_allow_data_loss",
+        "ParameterValue": "0",
+        "Description": "Set to 1 to enable nondefault values of innodb_flush_log_at_trx_commit, and to accept the data loss risk associated with these values. The default value of innodb_trx_commit_allow_data_loss is 0.",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "innodb_undo_directory",
+        "Description": "The relative or absolute directory path where InnoDB creates separate tablespaces for the undo logs",
+        "Source": "system",
+        "ApplyType": "static",
+        "DataType": "string",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "lc_time_names",
+        "Description": "This variable specifies the locale that controls the language used to display day and month names and abbreviations.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "ar_AE,ar_BH,ar_DZ,ar_EG,ar_IN,ar_IQ,ar_JO,ar_KW,ar_LB,ar_LY,ar_MA,ar_OM,ar_QA,ar_SA,ar_SD,ar_SY,ar_TN,ar_YE,be_BY,bg_BG,ca_ES,cs_CZ,da_DK,de_AT,de_BE,de_CH,de_DE,de_LU,el_GR,en_AU,en_CA,en_GB,en_IN,en_NZ,en_PH,en_US,en_ZA,en_ZW,es_AR,es_BO,es_CL,es_CO,es_CR,es_DO,es_EC,es_ES,es_GT,es_HN,es_MX,es_NI,es_PA,es_PE,es_PR,es_PY,es_SV,es_US,es_UY,es_VE,et_EE,eu_ES,fi_FI,fo_FO,fr_BE,fr_CA,fr_CH,fr_FR,fr_LU,gl_ES,gu_IN,he_IL,hi_IN,hr_HR,hu_HU,id_ID,is_IS,it_CH,it_IT,ja_JP,ko_KR,lt_LT,lv_LV,mk_MK,mn_MN,ms_MY,nb_NO,nl_BE,nl_NL,no_NO,pl_PL,pt_BR,pt_PT,ro_RO,ru_RU,ru_UA,sk_SK,sl_SI,sq_AL,sr_RS,sv_FI,sv_SE,ta_IN,te_IN,th_TH,tr_TR,uk_UA,ur_PK,vi_VN,zh_CN,zh_HK,zh_TW",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "lower_case_table_names",
+        "Description": "Affects how the server handles identifier case sensitivity",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "0-1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "mandatory_roles",
+        "Description": "Roles the server should treat as mandatory. In effect, these roles are automatically granted to every user, although setting mandatory_roles does not actually change any user accounts. Please consult MySQL documentation for more infomation on usage.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "mysql_native_password",
+        "ParameterValue": "ON",
+        "Description": "Enables the mysql_native_password authentication plugin.",
+        "Source": "system",
+        "ApplyType": "static",
+        "DataType": "string",
+        "AllowedValues": "OFF,ON",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "mysql_native_password_proxy_users",
+        "Description": "This variable controls whether the mysql_native_password built-in authentication plugin supports proxy users.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "ngram_token_size",
+        "Description": "Defines the n-gram token size for n-gram full-text parser.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "1-10",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "partial_revokes",
+        "ParameterValue": "0",
+        "Description": "Enabling this variable makes it possible to revoke privileges partially.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "password_history",
+        "Description": "The number of old passwords to check in the history. Set to 0 (the default) to turn the checks off.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-4294967295",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "password_require_current",
+        "Description": "The global policy for controlling whether attempts to change an account password must specify the current password to be replaced. Set to 0 (the default) to turn the checks off.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "password_reuse_interval",
+        "Description": "The minimum number of days that need to pass before a password can be reused. Set to 0 (the default) to turn the checks off.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-4294967295",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "read_only",
+        "ParameterValue": "0",
+        "Description": "When it is enabled, the server permits no updates except from updates performed by replica threads.",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1,{TrueIfClusterReplica}",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "relay-log-space-limit",
+        "Description": "The maximum amount of space to use for all relay logs.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "integer",
+        "AllowedValues": "0-4294967295",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "replica-skip-errors",
+        "Description": "This variable causes the replica SQL thread to continue replication when a statement returns any of the errors listed in the variable value.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "list",
+        "AllowedValues": "OFF,all,ddl_exist_errors,<integer>",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "replica_parallel_type",
+        "Description": "Enable parallel execution on the replica of all uncommitted threads already in the prepare phase, without violating consistency.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "DATABASE,LOGICAL_CLOCK",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "replica_preserve_commit_order",
+        "Description": "For a replica with binary logging enabled, setting replica_preserve_commit_order=1 guarantees transactions are written to the replica binary log in the same order they appear in the relay logs",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "ON,OFF",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "replica_transaction_retries",
+        "Description": "Sets the maximum number of times for replication SQL threads on a single-threaded or multithreaded replica to automatically retry failed transactions before stopping.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-4294967295",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "replica_type_conversions",
+        "Description": "Set of replica type conversions that are enabled. Legal values are: ALL_LOSSY to enable lossy conversions and ALL_NON_LOSSY to enable non-lossy conversions. If the variable is assigned the empty set, no conversions are allowed and it is expected that the types match exactly.",
+        "Source": "engine-default",
+        "ApplyType": "static",
+        "DataType": "list",
+        "AllowedValues": "ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "replicate-do-db",
+        "Description": "Creates a replication filter using the name of a database",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "list",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "replicate-do-table",
+        "Description": "Creates a replication filter using the name of a table",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "list",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "replicate-ignore-db",
+        "Description": "Creates a replication ignore filter using the name of a database",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "list",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "replicate-ignore-table",
+        "Description": "Creates a replication ignore filter using the name of a table",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "list",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "replicate-wild-do-table",
+        "Description": "Creates a replication filter using the pattern of a table name",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "list",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "replicate-wild-ignore-table",
+        "Description": "Creates a replication ignore filter using the pattern of a table name",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "list",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "require_secure_transport",
+        "ParameterValue": "ON",
+        "Description": "Whether client connections to the server are required to use some form of secure transport.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "ON,OFF",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "restrict_fk_on_non_standard_key",
+        "ParameterValue": "1",
+        "Description": "Disallow the creation of foreign keys referencing non-unique key or partial key.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "rpl_read_size",
+        "Description": "Sets the minimum amount of data in bytes which is read from binary log files and relay log files.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "8192-4294959104",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "server_audit_events",
+        "Description": "If set it specifies the set of types of events to log",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "list",
+        "AllowedValues": "CONNECT,QUERY,QUERY_DCL,QUERY_DDL,QUERY_DML,TABLE",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "server_audit_excl_users",
+        "Description": "If not empty, it contains the list of users whose activity will NOT be logged",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "server_audit_incl_users",
+        "Description": "If not empty, it contains a comma-delimited list of users whose activity will be logged",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "server_audit_logging",
+        "Description": "Enables audit logging",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "server_audit_logs_upload",
+        "ParameterValue": "0",
+        "Description": "Enables audit log upload to CloudWatch Logs",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "server_audit_query_log_limit",
+        "Description": "Limit on the length of the query string in an audit log record",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "1024-1073741824",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "server_id",
+        "ParameterValue": "{ServerId}",
+        "Description": "Integer value used to identify the instance in a replication group",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "skip_name_resolve",
+        "ParameterValue": "1",
+        "Description": "Host names are not resolved. All Host column values in the grant tables must be IP numbers or localhost.",
+        "Source": "system",
+        "ApplyType": "static",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "source_verify_checksum",
+        "Description": "Enabling this variable causes the source to examine checksums when reading from the binary log.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "ssl_cipher",
+        "ParameterValue": "ECDHE-ECDSA-AES128-GCM-SHA256,ECDHE-ECDSA-AES256-GCM-SHA384,ECDHE-RSA-AES128-GCM-SHA256,ECDHE-RSA-AES256-GCM-SHA384",
+        "Description": "The list of permissible ciphers for connection encryption. Certain allowable cipher values in this list may not be supported by all engine versions.  Please refer to configurable SSL ciphers documentation.",
+        "Source": "system",
+        "ApplyType": "dynamic",
+        "DataType": "list",
+        "AllowedValues": "ECDHE-ECDSA-AES128-GCM-SHA256,ECDHE-ECDSA-AES256-GCM-SHA384,ECDHE-RSA-AES128-GCM-SHA256,ECDHE-RSA-AES256-GCM-SHA384",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "time_zone",
+        "Description": "for changing time zone of db server locally",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "Africa/Abidjan,Africa/Accra,Africa/Addis_Ababa,Africa/Algiers,Africa/Asmara,Africa/Asmera,Africa/Bamako,Africa/Bangui,Africa/Banjul,Africa/Bissau,Africa/Blantyre,Africa/Brazzaville,Africa/Bujumbura,Africa/Cairo,Africa/Casablanca,Africa/Ceuta,Africa/Conakry,Africa/Dakar,Africa/Dar_es_Salaam,Africa/Djibouti,Africa/Douala,Africa/El_Aaiun,Africa/Freetown,Africa/Gaborone,Africa/Harare,Africa/Johannesburg,Africa/Juba,Africa/Kampala,Africa/Khartoum,Africa/Kigali,Africa/Kinshasa,Africa/Lagos,Africa/Libreville,Africa/Lome,Africa/Luanda,Africa/Lubumbashi,Africa/Lusaka,Africa/Malabo,Africa/Maputo,Africa/Maseru,Africa/Mbabane,Africa/Mogadishu,Africa/Monrovia,Africa/Nairobi,Africa/Ndjamena,Africa/Niamey,Africa/Nouakchott,Africa/Ouagadougou,Africa/Porto-Novo,Africa/Sao_Tome,Africa/Timbuktu,Africa/Tripoli,Africa/Tunis,Africa/Windhoek,America/Adak,America/Anchorage,America/Anguilla,America/Antigua,America/Araguaina,America/Argentina/Buenos_Aires,America/Argentina/Catamarca,America/Argentina/ComodRivadavia,America/Argentina/Cordoba,America/Argentina/Jujuy,America/Argentina/La_Rioja,America/Argentina/Mendoza,America/Argentina/Rio_Gallegos,America/Argentina/Salta,America/Argentina/San_Juan,America/Argentina/San_Luis,America/Argentina/Tucuman,America/Argentina/Ushuaia,America/Aruba,America/Asuncion,America/Atikokan,America/Atka,America/Bahia,America/Bahia_Banderas,America/Barbados,America/Belem,America/Belize,America/Blanc-Sablon,America/Boa_Vista,America/Bogota,America/Boise,America/Buenos_Aires,America/Cambridge_Bay,America/Campo_Grande,America/Cancun,America/Caracas,America/Catamarca,America/Cayenne,America/Cayman,America/Chicago,America/Chihuahua,America/Ciudad_Juarez,America/Coral_Harbour,America/Cordoba,America/Costa_Rica,America/Coyhaique,America/Creston,America/Cuiaba,America/Curacao,America/Danmarkshavn,America/Dawson,America/Dawson_Creek,America/Denver,America/Detroit,America/Dominica,America/Edmonton,America/Eirunepe,America/El_Salvador,America/Ensenada,America/Fortaleza,America/Fort_Nelson,America/Fort_Wayne,America/Glace_Bay,America/Godthab,America/Goose_Bay,America/Grand_Turk,America/Grenada,America/Guadeloupe,America/Guatemala,America/Guayaquil,America/Guyana,America/Halifax,America/Havana,America/Hermosillo,America/Indiana/Indianapolis,America/Indiana/Knox,America/Indiana/Marengo,America/Indiana/Petersburg,America/Indiana/Tell_City,America/Indiana/Vevay,America/Indiana/Vincennes,America/Indiana/Winamac,America/Indianapolis,America/Inuvik,America/Iqaluit,America/Jamaica,America/Jujuy,America/Juneau,America/Kentucky/Louisville,America/Kentucky/Monticello,America/Knox_IN,America/Kralendijk,America/La_Paz,America/Lima,America/Los_Angeles,America/Louisville,America/Lower_Princes,America/Maceio,America/Managua,America/Manaus,America/Marigot,America/Martinique,America/Matamoros,America/Mazatlan,America/Mendoza,America/Menominee,America/Merida,America/Metlakatla,America/Mexico_City,America/Miquelon,America/Moncton,America/Monterrey,America/Montevideo,America/Montreal,America/Montserrat,America/Nassau,America/New_York,America/Nipigon,America/Nome,America/Noronha,America/North_Dakota/Beulah,America/North_Dakota/Center,America/North_Dakota/New_Salem,America/Nuuk,America/Ojinaga,America/Panama,America/Pangnirtung,America/Paramaribo,America/Phoenix,America/Port-au-Prince,America/Porto_Acre,America/Porto_Velho,America/Port_of_Spain,America/Puerto_Rico,America/Punta_Arenas,America/Rainy_River,America/Rankin_Inlet,America/Recife,America/Regina,America/Resolute,America/Rio_Branco,America/Rosario,America/Santarem,America/Santa_Isabel,America/Santiago,America/Santo_Domingo,America/Sao_Paulo,America/Scoresbysund,America/Shiprock,America/Sitka,America/St_Barthelemy,America/St_Johns,America/St_Kitts,America/St_Lucia,America/St_Thomas,America/St_Vincent,America/Swift_Current,America/Tegucigalpa,America/Thule,America/Thunder_Bay,America/Tijuana,America/Toronto,America/Tortola,America/Vancouver,America/Virgin,America/Whitehorse,America/Winnipeg,America/Yakutat,America/Yellowknife,Antarctica/Casey,Antarctica/Davis,Antarctica/DumontDUrville,Antarctica/Macquarie,Antarctica/Mawson,Antarctica/McMurdo,Antarctica/Palmer,Antarctica/Rothera,Antarctica/South_Pole,Antarctica/Syowa,Antarctica/Troll,Antarctica/Vostok,Arctic/Longyearbyen,Asia/Aden,Asia/Almaty,Asia/Amman,Asia/Anadyr,Asia/Aqtau,Asia/Aqtobe,Asia/Ashgabat,Asia/Ashkhabad,Asia/Atyrau,Asia/Baghdad,Asia/Bahrain,Asia/Baku,Asia/Bangkok,Asia/Barnaul,Asia/Beirut,Asia/Bishkek,Asia/Brunei,Asia/Calcutta,Asia/Chita,Asia/Choibalsan,Asia/Chongqing,Asia/Chungking,Asia/Colombo,Asia/Dacca,Asia/Damascus,Asia/Dhaka,Asia/Dili,Asia/Dubai,Asia/Dushanbe,Asia/Famagusta,Asia/Gaza,Asia/Harbin,Asia/Hebron,Asia/Hong_Kong,Asia/Hovd,Asia/Ho_Chi_Minh,Asia/Irkutsk,Asia/Istanbul,Asia/Jakarta,Asia/Jayapura,Asia/Jerusalem,Asia/Kabul,Asia/Kamchatka,Asia/Karachi,Asia/Kashgar,Asia/Kathmandu,Asia/Katmandu,Asia/Khandyga,Asia/Kolkata,Asia/Krasnoyarsk,Asia/Kuala_Lumpur,Asia/Kuching,Asia/Kuwait,Asia/Macao,Asia/Macau,Asia/Magadan,Asia/Makassar,Asia/Manila,Asia/Muscat,Asia/Nicosia,Asia/Novokuznetsk,Asia/Novosibirsk,Asia/Omsk,Asia/Oral,Asia/Phnom_Penh,Asia/Pontianak,Asia/Pyongyang,Asia/Qatar,Asia/Qostanay,Asia/Qyzylorda,Asia/Rangoon,Asia/Riyadh,Asia/Saigon,Asia/Sakhalin,Asia/Samarkand,Asia/Seoul,Asia/Shanghai,Asia/Singapore,Asia/Srednekolymsk,Asia/Taipei,Asia/Tashkent,Asia/Tbilisi,Asia/Tehran,Asia/Tel_Aviv,Asia/Thimbu,Asia/Thimphu,Asia/Tokyo,Asia/Tomsk,Asia/Ujung_Pandang,Asia/Ulaanbaatar,Asia/Ulan_Bator,Asia/Urumqi,Asia/Ust-Nera,Asia/Vientiane,Asia/Vladivostok,Asia/Yakutsk,Asia/Yangon,Asia/Yekaterinburg,Asia/Yerevan,Atlantic/Azores,Atlantic/Bermuda,Atlantic/Canary,Atlantic/Cape_Verde,Atlantic/Faeroe,Atlantic/Faroe,Atlantic/Jan_Mayen,Atlantic/Madeira,Atlantic/Reykjavik,Atlantic/South_Georgia,Atlantic/Stanley,Atlantic/St_Helena,Australia/ACT,Australia/Adelaide,Australia/Brisbane,Australia/Broken_Hill,Australia/Canberra,Australia/Currie,Australia/Darwin,Australia/Eucla,Australia/Hobart,Australia/LHI,Australia/Lindeman,Australia/Lord_Howe,Australia/Melbourne,Australia/North,Australia/NSW,Australia/Perth,Australia/Queensland,Australia/South,Australia/Sydney,Australia/Tasmania,Australia/Victoria,Australia/West,Australia/Yancowinna,Brazil/Acre,Brazil/DeNoronha,Brazil/East,Brazil/West,Canada/Atlantic,Canada/Central,Canada/Eastern,Canada/Mountain,Canada/Newfoundland,Canada/Pacific,Canada/Saskatchewan,Canada/Yukon,CET,Chile/Continental,Chile/EasterIsland,CST6CDT,Cuba,EET,Egypt,Eire,EST,EST5EDT,Etc/GMT,Etc/GMT+0,Etc/GMT+1,Etc/GMT+10,Etc/GMT+11,Etc/GMT+12,Etc/GMT+2,Etc/GMT+3,Etc/GMT+4,Etc/GMT+5,Etc/GMT+6,Etc/GMT+7,Etc/GMT+8,Etc/GMT+9,Etc/GMT-0,Etc/GMT-1,Etc/GMT-10,Etc/GMT-11,Etc/GMT-12,Etc/GMT-13,Etc/GMT-14,Etc/GMT-2,Etc/GMT-3,Etc/GMT-4,Etc/GMT-5,Etc/GMT-6,Etc/GMT-7,Etc/GMT-8,Etc/GMT-9,Etc/GMT0,Etc/Greenwich,Etc/UCT,Etc/Universal,Etc/UTC,Etc/Zulu,Europe/Amsterdam,Europe/Andorra,Europe/Astrakhan,Europe/Athens,Europe/Belfast,Europe/Belgrade,Europe/Berlin,Europe/Bratislava,Europe/Brussels,Europe/Bucharest,Europe/Budapest,Europe/Busingen,Europe/Chisinau,Europe/Copenhagen,Europe/Dublin,Europe/Gibraltar,Europe/Guernsey,Europe/Helsinki,Europe/Isle_of_Man,Europe/Istanbul,Europe/Jersey,Europe/Kaliningrad,Europe/Kiev,Europe/Kirov,Europe/Kyiv,Europe/Lisbon,Europe/Ljubljana,Europe/London,Europe/Luxembourg,Europe/Madrid,Europe/Malta,Europe/Mariehamn,Europe/Minsk,Europe/Monaco,Europe/Moscow,Europe/Nicosia,Europe/Oslo,Europe/Paris,Europe/Podgorica,Europe/Prague,Europe/Riga,Europe/Rome,Europe/Samara,Europe/San_Marino,Europe/Sarajevo,Europe/Saratov,Europe/Simferopol,Europe/Skopje,Europe/Sofia,Europe/Stockholm,Europe/Tallinn,Europe/Tirane,Europe/Tiraspol,Europe/Ulyanovsk,Europe/Uzhgorod,Europe/Vaduz,Europe/Vatican,Europe/Vienna,Europe/Vilnius,Europe/Volgograd,Europe/Warsaw,Europe/Zagreb,Europe/Zaporozhye,Europe/Zurich,GB,GB-Eire,GMT,GMT+0,GMT-0,GMT0,Greenwich,Hongkong,HST,Iceland,Indian/Antananarivo,Indian/Chagos,Indian/Christmas,Indian/Cocos,Indian/Comoro,Indian/Kerguelen,Indian/Mahe,Indian/Maldives,Indian/Mauritius,Indian/Mayotte,Indian/Reunion,Iran,Israel,Jamaica,Japan,Kwajalein,Libya,MET,Mexico/BajaNorte,Mexico/BajaSur,Mexico/General,MST,MST7MDT,Navajo,NZ,NZ-CHAT,Pacific/Apia,Pacific/Auckland,Pacific/Bougainville,Pacific/Chatham,Pacific/Chuuk,Pacific/Easter,Pacific/Efate,Pacific/Enderbury,Pacific/Fakaofo,Pacific/Fiji,Pacific/Funafuti,Pacific/Galapagos,Pacific/Gambier,Pacific/Guadalcanal,Pacific/Guam,Pacific/Honolulu,Pacific/Johnston,Pacific/Kanton,Pacific/Kiritimati,Pacific/Kosrae,Pacific/Kwajalein,Pacific/Majuro,Pacific/Marquesas,Pacific/Midway,Pacific/Nauru,Pacific/Niue,Pacific/Norfolk,Pacific/Noumea,Pacific/Pago_Pago,Pacific/Palau,Pacific/Pitcairn,Pacific/Pohnpei,Pacific/Ponape,Pacific/Port_Moresby,Pacific/Rarotonga,Pacific/Saipan,Pacific/Samoa,Pacific/Tahiti,Pacific/Tarawa,Pacific/Tongatapu,Pacific/Truk,Pacific/Wake,Pacific/Wallis,Pacific/Yap,Poland,Portugal,posixrules,PRC,PST8PDT,ROC,ROK,Singapore,Turkey,UCT,Universal,US/Alaska,US/Aleutian,US/Arizona,US/Central,US/East-Indiana,US/Eastern,US/Hawaii,US/Indiana-Starke,US/Michigan,US/Mountain,US/Pacific,US/Samoa,UTC,W-SU,WET,Zulu",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "tls_ciphersuites",
+        "ParameterValue": "TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384",
+        "Description": "The ciphersuites permitted by the server for encrypted connections that use TLSv1.3.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "list",
+        "AllowedValues": "TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "tls_version",
+        "Description": "The protocols permitted by the server for encrypted connections.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "list",
+        "AllowedValues": "TLSv1.2,TLSv1.3",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "validate_password.changed_characters_percentage",
+        "Description": "Indicates the minimum number of characters, as a percentage of all characters, that must be changed when the validate_password component validates a new password.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-100",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "validate_password.check_user_name",
+        "Description": "Compares passwords to the user name part of the effective user account when validate_password component is used",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "boolean",
+        "AllowedValues": "0,1",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "validate_password.dictionary_file",
+        "Description": "The path name of the dictionary file used by the validate_password component for checking passwords.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "IsModifiable": false
+      },
+      {
+        "ParameterName": "validate_password.length",
+        "Description": "The minimum number of characters that validate_password component requires passwords to have.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-2147483647",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "validate_password.mixed_case_count",
+        "Description": "The minimum number of lowercase and uppercase characters that passwords checked by the validate_password plugin must have if the password policy is MEDIUM or stronger",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-2147483647",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "validate_password.number_count",
+        "Description": "The minimum number of numeric (digit) characters that passwords checked by the validate_password plugin must have if the password policy is MEDIUM or stronger.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-2147483647",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "validate_password.policy",
+        "Description": "The password policy enforced by validate_password component.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "string",
+        "AllowedValues": "LOW,MEDIUM",
+        "IsModifiable": true
+      },
+      {
+        "ParameterName": "validate_password.special_char_count",
+        "Description": "The minimum number of nonalphanumeric characters that passwords checked by the validate_password component must have if the password policy is MEDIUM or stronger.",
+        "Source": "engine-default",
+        "ApplyType": "dynamic",
+        "DataType": "integer",
+        "AllowedValues": "0-2147483647",
+        "IsModifiable": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "DBEngineVersions": [
+    {
+      "Engine": "aurora-mysql",
+      "EngineVersion": "8.4.mysql_aurora.8.4.7",
+      "DBParameterGroupFamily": "aurora-mysql8.4",
+      "DBEngineDescription": "Aurora MySQL",
+      "DBEngineVersionDescription": "Aurora MySQL 8.4.7 (compatible with MySQL 8.4.7)",
+      "ValidUpgradeTarget": [
+        {
+          "Engine": "aurora-mysql",
+          "EngineVersion": "8.4.mysql_aurora.8.4.8",
+          "Description": "Aurora MySQL 8.4.8 (compatible with MySQL 8.4.8)",
+          "AutoUpgrade": false,
+          "IsMajorVersionUpgrade": false,
+          "SupportedEngineModes": [
+            "provisioned"
+          ],
+          "SupportsParallelQuery": true,
+          "SupportsGlobalDatabases": true,
+          "SupportsBabelfish": false,
+          "SupportsLocalWriteForwarding": true,
+          "SupportsIntegrations": true
+        }
+      ],
+      "ExportableLogTypes": [
+        "audit",
+        "error",
+        "general",
+        "iam-db-auth-error",
+        "instance",
+        "slowquery"
+      ],
+      "SupportsLogExportsToCloudwatchLogs": true,
+      "SupportsReadReplica": false,
+      "SupportedEngineModes": [
+        "provisioned"
+      ],
+      "SupportedFeatureNames": [],
+      "Status": "available",
+      "SupportsParallelQuery": true,
+      "SupportsGlobalDatabases": true,
+      "MajorEngineVersion": "8.4",
+      "SupportsBabelfish": false,
+      "SupportsLimitlessDatabase": false,
+      "SupportsCertificateRotationWithoutRestart": true,
+      "SupportedCACertificateIdentifiers": [
+        "rds-ca-ecc384-g1",
+        "rds-ca-rsa4096-g1",
+        "rds-ca-rsa2048-g1"
+      ],
+      "SupportsLocalWriteForwarding": true,
+      "SupportsIntegrations": true,
+      "ServerlessV2FeaturesSupport": {
+        "MinCapacity": 0.0,
+        "MaxCapacity": 256.0
+      }
+    }
+  ]
+}

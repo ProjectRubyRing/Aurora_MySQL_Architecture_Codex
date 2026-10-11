@@ -1,0 +1,20 @@
+[
+  {
+    "EngineVersion": "8.4.mysql_aurora.8.4.7",
+    "DBInstanceClass": "db.serverless",
+    "SupportedEngineModes": [
+      "provisioned"
+    ],
+    "SupportsGlobalDatabases": true,
+    "AvailabilityZoneCount": 3
+  },
+  {
+    "EngineVersion": "8.4.mysql_aurora.8.4.7",
+    "DBInstanceClass": "db.serverless",
+    "SupportedEngineModes": [
+      "provisioned"
+    ],
+    "SupportsGlobalDatabases": true,
+    "AvailabilityZoneCount": 3
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "method": "Pillow rendering of actual XLSX cell values, merges, widths, heights, fonts, fills and wrapping. Not an Excel screenshot.",
+  "samples": [
+    {
+      "sheet": "00_はじめに",
+      "range": "B2:D26",
+      "png": "cover_preview.png",
+      "pixels": [
+        971,
+        857
+      ],
+      "potential_overflows": []
+    },
+    {
+      "sheet": "02_構成図",
+      "range": "A1:P39",
+      "png": "architecture_preview.png",
+      "pixels": [
+        1304,
+        1241
+      ],
+      "potential_overflows": []
+    },
+    {
+      "sheet": "07_Proxy設定",
+      "range": "A1:F16",
+      "png": "proxy_preview.png",
+      "pixels": [
+        1806,
+        870
+      ],
+      "potential_overflows": []
+    },
+    {
+      "sheet": "10_タイムアウト",
+      "range": "A1:H17",
+      "png": "timeouts_preview.png",
+      "pixels": [
+        2036,
+        900
+      ],
+      "potential_overflows": []
+    },
+    {
+      "sheet": "20_クラスタ既定",
+      "range": "A65:M75",
+      "png": "parameters_preview.png",
+      "pixels": [
+        2856,
+        1262
+      ],
+      "potential_overflows": []
+    },
+    {
+      "sheet": "15_接続数試算",
+      "range": "B2:D29",
+      "png": "capacity_preview.png",
+      "pixels": [
+        1181,
+        1145
+      ],
+      "potential_overflows": []
+    }
+  ]
+}

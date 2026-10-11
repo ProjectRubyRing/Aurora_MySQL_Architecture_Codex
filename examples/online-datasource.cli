@@ -1,0 +1,9 @@
+# Configuration example only. Not executed. Install a reviewed driver module first.
+# AppCredentials is an Elytron credential store populated through the approved secret flow.
+# Environment: DB_PROXY_HOST, DB_NAME, DB_USER. The host must be the regional Proxy FQDN.
+/subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=com.mysql,driver-class-name=com.mysql.cj.jdbc.Driver)
+/subsystem=datasources/data-source=OnlineDS:add(jndi-name=java:/jdbc/OnlineDS,driver-name=mysql,connection-url="jdbc:mysql://${env.DB_PROXY_HOST}:3306/${env.DB_NAME}?sslMode=VERIFY_IDENTITY&tlsVersions=TLSv1.2,TLSv1.3&connectTimeout=3000&socketTimeout=12000&characterEncoding=UTF-8&connectionTimeZone=UTC&forceConnectionTimeZoneToSession=false&allowPublicKeyRetrieval=false&autoReconnect=false&allowMultiQueries=false&allowLoadLocalInfile=false&useServerPrepStmts=false&queryTimeoutKillsConnection=true",user-name="${env.DB_USER}",credential-reference={store=AppCredentials,alias=online-db},min-pool-size=0,max-pool-size=20,pool-prefill=false,blocking-timeout-wait-millis=1000,idle-timeout-minutes=5,query-timeout=8,set-tx-query-timeout=false,allocation-retry=0,validate-on-match=true,background-validation=false,valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker,exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter,statistics-enabled=true,enabled=true)
+# This changes the server-wide transaction default; use only on a dedicated online server.
+/subsystem=transactions:write-attribute(name=default-timeout,value=20)
+# Inspect the management model and schema on the installed EAP 8.1 patch before applying.
+/subsystem=datasources/data-source=OnlineDS:read-resource-description
